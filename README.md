@@ -36,6 +36,30 @@ This repository was completed against **Solana Devnet**. Devnet is used for deve
 
 **Status:** All required tasks are completed ✅
 
+## Verification
+
+### SPL Token Tests
+
+![SPL token scripts passing](screenshots/spl-test1.png)
+![SPL token scripts passing](screenshots/spl-test2.png)
+
+### NFT Tests
+
+![NFT scripts passing](screenshots/nft-test.png)
+
+### SPL Transfer
+
+![SPL transfer finalized](screenshots/spl-transfer.png)
+
+### MPL Core NFT
+
+![NFT minted](screenshots/nft-mint1.png)
+![NFT minted](screenshots/nft-mint2.png)
+
+### NFT Update
+
+![NFT updated](screenshots/nft-update.png)
+
 ---
 
 # Table of Contents
