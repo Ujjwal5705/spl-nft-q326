@@ -11,6 +11,8 @@
     "spl:transfer": "npx ts-node src/spl/spl_transfer.ts",
     "nft:image": "npx ts-node src/nft/nft_image.ts",
     "nft:metadata": "npx ts-node src/nft/nft_metadata.ts",
+    "nft:update_metadata": "npx ts-node src/nft/nft_updated_metadata.ts",
+    "nft:update": "npx ts-node src/nft/nft_update.ts",
     "nft:mint": "npx ts-node src/nft/nft_mint.ts"
   },
   "keywords": [],
@@ -18,6 +20,8 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@irys/upload": "^0.0.15",
+    "@irys/upload-solana": "^0.1.8",
     "@metaplex-foundation/mpl-core": "^1.10.0",
     "@metaplex-foundation/mpl-token-metadata": "^3.4.0",
     "@metaplex-foundation/umi": "^1.5.1",
@@ -29,7 +33,7 @@
     "bs58": "^6.0.0"
   },
   "devDependencies": {
-    "@types/node": "^25.6.0",
+    "@types/node": "^25.9.5",
     "ts-node": "^10.9.2",
     "typescript": "^6.0.3"
   }

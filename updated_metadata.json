@@ -1,0 +1,19 @@
+{
+  "name": "Ujjwal NFT V2",
+  "description": "Updated metadata for my Metaplex Core NFT on Solana Devnet.",
+  "image": "https://gateway.irys.xyz/AJJJDXoyGrFkEbNKve4vdNwkGNHqvwjqSuX8n5CGeR6o",
+  "attributes": [
+    {
+      "trait_type": "Creator",
+      "value": "Ujjwal"
+    },
+    {
+      "trait_type": "Version",
+      "value": "2"
+    },
+    {
+      "trait_type": "Network",
+      "value": "Solana Devnet"
+    }
+  ]
+}

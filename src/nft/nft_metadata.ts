@@ -25,14 +25,32 @@ umi.use(signerIdentity(signer));
   try {
     //change the image uri to your image uri obtained from nft_image.ts
     const image =
-      "https://gateway.irys.xyz/5EDyiNrMWfhjdsEwXLrwkHPwZoZB2m1A2Kudrfxo1tpr";
+      "https://gateway.irys.xyz/AJJJDXoyGrFkEbNKve4vdNwkGNHqvwjqSuX8n5CGeR6o";
 
     //json scheme : https://www.metaplex.com/docs/smart-contracts/core/json-schema
     //change the metadata
-    // const metadata =
-    // const myUri =
-    // console.log(`metadata uri: ${myUri} `);
+    const metadata = {
+      name: "Ujjwal NFT",
+      description: "My first NFT minted using Metaplex Core on Solana Devnet.",
+      image,
+      attributes: [
+        {
+          trait_type: "Creator",
+          value: "Ujjwal Sharma",
+        },
+        {
+          trait_type: "Network",
+          value: "Solana Devnet",
+        },
+      ],
+    };
+
+    const myUri = await umi.uploader.uploadJson(metadata);
+
+    console.log(`metadata uri: ${myUri}`);
   } catch (error) {
     console.log("error", error);
   }
 })();
+
+// metadata uri: https://gateway.irys.xyz/9RNAAEN7WzeN8tyEdcmR4BEWVaAqnay471Mog3GkM8wU

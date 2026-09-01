@@ -14,7 +14,7 @@ import {
 import bs58 from "bs58";
 
 //paste your mint address got from spl_init.ts
-const mint = publicKey("E2Jazz2VXcVL9RZkn6ZFA4q1YGvgEvrns3Gr6w72DC4w");
+const mint = publicKey("7mBgn5gQwTGmVLXg1vrDHAq2wZFr9tkddM1Cy5THKDjt");
 
 const umi = createUmi("https://api.devnet.solana.com");
 
@@ -30,21 +30,41 @@ umi.use(signerIdentity(signer));
       mintAuthority: signer,
     };
 
-    //change the metadata
-    // const data: DataV2Args =
+    // Token metadata
+    const data: DataV2Args = {
+      name: "Ujjwal Coin",
+      symbol: "UJJ",
+      uri: "https://gateway.irys.xyz/43Wi354zPKTy87nuMxCF7q8f785nmUawkoa38gJcHBJe",
+      sellerFeeBasisPoints: 0,
+      creators: null,
+      collection: null,
+      uses: null,
+    };
 
-    // const args: CreateMetadataAccountV3InstructionArgs =
+    // Instruction arguments
+    const args: CreateMetadataAccountV3InstructionArgs = {
+      data,
+      isMutable: true,
+      collectionDetails: null,
+    };
 
-    // const tx = createMetadataAccountV3(umi, {
-    //   ...accounts,
-    //   ...args,
-    // });
+    // Create metadata account
+    const tx = createMetadataAccountV3(umi, {
+      ...accounts,
+      ...args,
+    });
 
-    // const result = await tx.sendAndConfirm(umi);
-    // console.log("signature: ", bs58.encode(Buffer.from(result.signature)));
+    // Send transaction
+    const result = await tx.sendAndConfirm(umi);
+
+    console.log("signature:", bs58.encode(Buffer.from(result.signature)));
+    console.log("Mint:", mint);
+    console.log("Metadata created successfully!");
+
   } catch (error) {
     console.log("error", error);
   }
 })();
 
-//43ttSnN9qaVi8TDcWwBZo5mUbfKDXY8d1N7exdJojJxV7qjKuwXoEh7qASXbFU4QFrAEFzZvcmWpRch434hSVNLN
+// signature: ajQaKLDJKygXKTRWxiEeGLGLK5PFNgsVwGPtk59FA4P7LKKX1xsm7RR6un3SgyFVppQXrP5H1mWBzJ6z9x52NN9
+// Mint: 7mBgn5gQwTGmVLXg1vrDHAq2wZFr9tkddM1Cy5THKDjt
